@@ -82,8 +82,13 @@
 }
 
 .display-three {
-  font-size: 64px;
+  font-size: 36px;
   line-height: 120%;
+}
+
+.py-5-custom{
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .display-four {
@@ -224,6 +229,13 @@ li {
   padding-bottom: 60px;
 }
 
+@media (max-width: 1024px) {
+  .py-5-custom{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
 @media (max-width: 991px) {
   .display-nine {
     font-size: 100px;
@@ -238,8 +250,12 @@ li {
     line-height: 120%;
   }
   .display-three {
-    font-size: 56px;
+    font-size: 36px;
     line-height: 120%;
+  }
+  .py-5-custom{
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .display-four {
     font-size: 48px;
@@ -343,8 +359,12 @@ li {
     line-height: 46.4px;
   }
   .display-three {
-    font-size: 42px;
+    font-size: 22px;
     line-height: 54.6px;
+  }
+  .py-5-custom{
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .display-four {
     font-size: 32px;
@@ -1896,7 +1916,7 @@ span {
 
 .particial-bg {
   width: 100%;
-  height: 1080px;
+  height: 100vh !important;
   background: url("../images/herobg.webp");
   background-position: center;
   background-attachment: fixed;
@@ -2360,5 +2380,3 @@ body.dark .term-condition-items p strong{
     z-index: 9999;
     background: transparent;
 }
-
-

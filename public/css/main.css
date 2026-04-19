@@ -16,3 +16,13 @@
     font-weight: 700;
     font-size: 20px;
 }
+
+.home-sizing{
+    height: 100vh !important;
+}
+
+@media (max-width: 1440px) {
+    .home-sizing{
+        height: 50% !important;
+    }
+}

@@ -1,79 +1,91 @@
 
 @extends('layouts.app')
-@section('metaTitle', __('meta_title'))
-@section('metaDescription', __('meta_description'))
-@section('metaKeywords', __('meta_keywords'))
+@section('title', __('meta_title'))
+@section('description', __('meta_description'))
+@section('keywords', __('meta_keywords'))
 @section('main')
 <!-- Hero section start -->
 <section class="particial-bg">
-
-    <div id="particles-js">
-        <div class="particles_hero">
+    <div id="particles-js h-100">
+        <div class="particles_hero mt-10 h-100">
             <div class="container h-100">
-                <div class="row pt-20 h-100">
-                    <div class="col-lg-6 h-100">
+                <div class="row vh-100 home-sizing">
+                    <div class="col-lg-8 grow">
                         <div
-                            class="d-flex align-items-center justify-content-center h-100"
+                            class="d-flex align-items-center justify-content-center h-100  "
                         >
                             <div>
-                                <div
+                                <h1
+                                    class="fs-three p6-color fw-bold mb-3"
                                     data-aos="fade-up"
                                     data-aos-duration="800"
-                                    class="w-100 d-flex gap-3 align-items-center px-3 px-lg-5 py-2 py-lg-3 border cus-border second rounded-pill hero_hot mb-3 mb-lg-6"
+                                    style="margin-top: 0px"
                                 >
-                                    <button class="px-3 px-lg-5 py-2 rounded-pill p5-color bg3-color" >
-                                        Hot
-                                    </button>
-                                    <span class="p6-color" >{{ __('delivering_superior_services_it_solutions') }}</span>
-                                </div>
-                                <h2
-                                    class="fs-one p6-color fw-bold mb-3 mb-lg-5"
-                                    data-aos="fade-up"
-                                    data-aos-duration="800"
+                                    {{ __('meta_title') }}
+                                </h1>
+                                <p
+                                        class="p6-color home-sizing-five fs-six mb-3"
+                                        data-aos="fade-up"
+                                        data-aos-duration="800"
                                 >
-                                    {{ __('providing_best_services_it_solutions') }}
-                                </h2>
+                                    {{ __('meta_description') }}
+                                </p>
                                 <p
                                     class="p6-color fs-ten"
-                                    data-aos="fade-down"
+                                    data-aos="fade-up"
                                     data-aos-duration="800"
                                 >
                                     {{ __('customize_template') }}
                                 </p>
-                                <div data-aos="fade-down" data-aos-duration="800">
+                                <div data-aos="fade-up" data-aos-duration="800">
                                     <div
                                         class="d-flex flex-wrap gap-3 gap-md-6 my-5 my-md-10"
                                         data-aos="fade-down"
                                     >
-                                        <a href="{{ url('/contact') }}" class="btn p6-color">
-                                            <span class="btn-text-0">{{ __('get_quotes') }}</span>
-                                            <span class="btn-text-1">{{ __('get_quotes') }}</span>
-                                        </a>
-                                        <a href="{{ url('/services') }}" class="btn p6-color">
-                                            <span class="btn-text-0">{{ __('get_started') }}</span>
-                                            <span class="btn-text-1">{{ __('get_started') }}</span>
-                                        </a>
+                                        <div class="d-flex flex-wrap gap-4 gap-lg-5 align-items-center aos-init" data-aos="fade-up" data-aos-duration="800">
+                                            <a href="/contact" class="btn p6-color" style="display:flex; width: 295px; ">
+                                                <span class="btn-text-0 d-block">{{ __('get_quotes') }}</span>
+                                                <span class="btn-text-1 d-block">{{ __('get_quotes') }}</span>
+                                            </a>
+                                        <div class="d-flex align-items-center gap-lg-5">
+                                            <div class="d-flex">
+                                                <div class="choose_icon_width bg1-color d-flex flex-shrink-0 justify-content-center align-items-center">
+                                                    <i class="ph ph-phone-call text-white fs-three" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="choose_icon_width choose_img">
+                                                    <img src="../images/chooseImg.webp" alt="Client Support Team" width="60" height="60">
+                                                </div>
+                                            </div>
+                                            <a href="tel:+998991832233" class="fw-semibold fs-six" aria-label="Call us">+998 (99) 183 22 33</a>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-wrap gap-3">
-                                        <a
-                                            href="http://t.me/WellSoftOfficial" target="_blank"
-                                            class="footer_icon d-flex justify-content-center align-items-center"
-                                        >
-                                            <i class="fa-brands fa-telegram"></i>
-                                        </a>
-                                        <a
-                                            href="http://t.me/WellSoftOfficial" target="_blank"
-                                            class="footer_icon d-flex justify-content-center align-items-center"
-                                        >
-                                            <i class="fa-brands fa-instagram"></i>
-                                        </a>
-                                        <a
-                                            href="javascriopt:void(0)"
-                                            class="footer_icon d-flex justify-content-center align-items-center"
-                                        >
-                                            <i class="fa-brands fa-facebook"></i>
-                                        </a>
-                                    </div>
+                                </div>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a
+                                        href="http://t.me/WellSoftOfficial" target="_blank"
+                                        class="footer_icon d-flex justify-content-center align-items-center"
+                                        aria-label="Telegram"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i class="fa-brands fa-telegram"></i>
+                                    </a>
+                                    <a
+                                        href="http://t.me/WellSoftOfficial" target="_blank"
+                                        class="footer_icon d-flex justify-content-center align-items-center"
+                                        aria-label="Instagram"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        class="footer_icon d-flex justify-content-center align-items-center"
+                                        aria-label="Facebook"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -99,13 +111,14 @@
                 <p class="fs-ten p4-color">{{ $service->getTranslatedAttribute('description', session('locale')) }}</p>
             </div>
             <div>
-                <a href="{{ url('/services') }}" class="btn p6-color">
-                    <span class="btn-text-0">{{ __('see_services') }}</span>
-                    <span class="btn-text-1">{{ __('see_services') }}</span>
-                </a>
+                <!--<a href="{{ url('/services') }}" class="btn p6-color">-->
+                <!--    <span class="btn-text-0">{{ __('see_services') }}</span>-->
+                <!--    <span class="btn-text-1">{{ __('see_services') }}</span>-->
+                <!--</a>-->
             </div>
         </div>
-        <div class="row g-2 g-lg-5 mt-7 mt-lg-15">
+        <div class="w-100" style="box-shadow: 0px 0px 3px #0A2E6B; background: #fff; height: 0.1px; margin: 25px 0;"></div>
+        <div class="row g-2 g-lg-5">
             @foreach($service->serviceItems as $serviceItem)
                 <div
                     class="col-12 col-sm-6 col-xl-4"
@@ -113,14 +126,27 @@
                     data-aos-duration="700"
                 >
                     <div
-                        class="text-center px-10 py-8 hover:bg6-color service_card_hover"
+                        class="text-center  px-10 py-8 hover:bg6-color service_card_hover"
                     >
-                        <img
-                            src="{{ \TCG\Voyager\Facades\Voyager::image($serviceItem->icon) }}"
-                            alt="{{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}"
-                            width="80"
-                            height="80"
-                        />
+                        <div class="d-flex justify-content-center">
+                            <img
+                                    src="{{ \TCG\Voyager\Facades\Voyager::image($serviceItem->icon_dark) }}"
+                                    alt="{{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}"
+                                    width="80"
+                                    height="80"
+                                    loading="lazy"
+                                    class="mode dark"
+                            />
+
+                            <img
+                                    src="{{ \TCG\Voyager\Facades\Voyager::image($serviceItem->icon_light) }}"
+                                    alt="{{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}"
+                                    width="80"
+                                    height="80"
+                                    loading="lazy"
+                                    class="mode light"
+                            />
+                        </div>
                         <h4 class="fs-five fw-semibold p8-color mt-8 mb-4">
                             {{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}
                         </h4>
@@ -245,7 +271,7 @@
 <!-- Our Process Flow End -->
 
 <!--Service slider Section start  -->
-<section class="pt-60 pb-60 bg4-color position-relative">
+<section class="py-5-custom bg4-color position-relative">
     <div class="swiper service_slider">
         <div class="swiper-wrapper d-flex align-items-center">
             @foreach($service->serviceItems as $serviceItem)
@@ -283,45 +309,59 @@
                             <div class="mt-8 mt-lg-15">
                                 <div class="row g-4 g-lg-8">
                                     @foreach($aboutItem->aboutUsItemChildren as $aboutUsItemChild)
-                                        <div class="col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">
-                                            <img src="{{ \TCG\Voyager\Facades\Voyager::image($aboutUsItemChild->icon) }}" alt="security" width="60" height="60">
-                                            <h5 class="fs-five p8-color mt-3 mt-lg-6 mb-2 mb-lg-4">
-                                                {{ $aboutUsItemChild->getTranslatedAttribute('title', session('locale')) }}
-                                            </h5>
-                                            <div class="fs-ten p4-color">
-                                                {!! $aboutUsItemChild->getTranslatedAttribute('info', session('locale')) !!}
+                                            <div class="col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">
+                                                <img src="{{ \TCG\Voyager\Facades\Voyager::image($aboutUsItemChild->icon_dark) }}"
+                                                     alt="{{ $aboutUsItemChild->getTranslatedAttribute('title', session('locale')) }}"
+                                                     width="60"
+                                                     height="60"
+                                                     loading="lazy"
+                                                     class="mode dark"
+                                                >
+
+                                                <img src="{{ \TCG\Voyager\Facades\Voyager::image($aboutUsItemChild->icon_light) }}"
+                                                     alt="{{ $aboutUsItemChild->getTranslatedAttribute('title', session('locale')) }}"
+                                                     width="60"
+                                                     height="60"
+                                                     loading="lazy"
+                                                     class="mode light"
+                                                >
+                                                <h5 class="fs-five p8-color mt-3 mt-lg-6 mb-2 mb-lg-4">
+                                                    {{ $aboutUsItemChild->getTranslatedAttribute('title', session('locale')) }}
+                                                </h5>
+                                                <div class="fs-ten p4-color">
+                                                    {!! $aboutUsItemChild->getTranslatedAttribute('info', session('locale')) !!}
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-wrap gap-4 gap-lg-5 mt-5 align-items-center aos-init" data-aos="fade-up" data-aos-duration="800">
+                                    <a href="/contact" class="btn p6-color" style="display:flex; width: 295px; ">
+                                        <span class="btn-text-0">{{ __('get_quotes') }}</span>
+                                        <span class="btn-text-1">{{ __('get_quotes') }}</span>
+                                    </a>
+                                    <div class="d-flex align-items-center gap-lg-5">
+                                        <div class="d-flex">
+                                            <div class="choose_icon_width bg1-color d-flex flex-shrink-0 justify-content-center align-items-center">
+                                                <i class="ph ph-phone-call text-white fs-three" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="choose_icon_width choose_img">
+                                                <img src="../images/chooseImg.webp" alt="Choose WellSoft" width="60" height="60" loading="lazy">
                                             </div>
                                         </div>
-                                    @endforeach
-                                </div>
-                            </div>
-
-                            <div class="mt-6 mt-lg-12 d-flex flex-wrap gap-4 gap-lg-8 align-items-center aos-init" data-aos="fade-up" data-aos-duration="800">
-                                <a href="/contact" class="btn p6-color">
-                                    <span class="btn-text-0">{{ __('get_quotes') }}</span>
-                                    <span class="btn-text-1">{{ __('get_quotes') }}</span>
-                                </a>
-                                <div class="d-flex align-items-center gap-lg-5">
-                                    <div class="d-flex">
-                                        <div class="choose_icon_width bg1-color d-flex flex-shrink-0 justify-content-center align-items-center">
-                                            <i class="ph ph-phone-call text-white fs-three"></i>
-                                        </div>
-                                        <div class="choose_icon_width choose_img">
-                                            <img src="../images/chooseImg.webp" alt="...">
-                                        </div>
+                                        <a href="tel:+998991832233" class="p4-color fw-semibold fs-six" aria-label="Call us">+998 (99) 183 22 33</a>
                                     </div>
-                                    <a href="tel:+998901832233" class="p4-color fw-semibold fs-six">+998 (90) 183 22 33</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-xl-5 aos-init aos-animate" data-aos="zoom-in" data-aos-duration="800">
-                        <div class="">
-                            <img class="choose_us object-fit-cover" src="{{ \TCG\Voyager\Facades\Voyager::image($aboutItem->image) }}" alt="...">
+                        <div class="col-xl-5 aos-init aos-animate" data-aos="zoom-in" data-aos-duration="800">
+                            <div class="">
+                                <img class="choose_us object-fit-cover" src="{{ \TCG\Voyager\Facades\Voyager::image($aboutItem->image) }}" alt="About WellSoft Team" width="500" height="500" loading="lazy">
+                            </div>
                         </div>
                     </div>
-                </div>
             @endforeach
         </div>
     </section>
@@ -355,7 +395,7 @@
                         <div class="col-sm-6 col-md-4 col-lg-3 aos-init" data-aos="fade-up" data-aos-duration="700">
                             <div class="single_project position-relative z-1">
                                 <div>
-                                    <img src="{{ \TCG\Voyager\Facades\Voyager::image($portfolioItem->photo) }}" class="w-full" alt="...">
+                                    <img src="{{ \TCG\Voyager\Facades\Voyager::image($portfolioItem->photo) }}" class="w-full" alt="{{ $portfolioItem->getTranslatedAttribute('name', session('locale'))  }}" width="400" height="300" loading="lazy">
                                 </div>
                                 <div class="p-3 p-md-5 position-absolute bottom-0 bg6-color w-100 project-content z-2">
                                     <h4 class="p1-color fs-five mb-2 mb-md-4">
@@ -369,7 +409,7 @@
                             <div class="col-sm-6 col-md-4 col-lg-3 aos-init" data-aos="fade-up" data-aos-duration="700">
                                 <div class="single_project position-relative z-1">
                                     <div>
-                                        <img src="{{ \TCG\Voyager\Facades\Voyager::image($child->photo) }}" class="w-full" alt="...">
+                                        <img src="{{ \TCG\Voyager\Facades\Voyager::image($child->photo) }}" class="w-full" alt="{{ $child->getTranslatedAttribute('name', session('locale'))  }}" width="400" height="300" loading="lazy">
                                     </div>
                                     <div class="p-3 p-md-5 position-absolute bottom-0 bg6-color w-100 project-content z-2">
                                         <h4 class="p1-color fs-five mb-2 mb-md-4">
@@ -390,7 +430,7 @@
                             <div class="col-sm-6 col-md-4 col-lg-3 aos-init" data-aos="fade-up" data-aos-duration="700">
                                 <div class="single_project position-relative z-1">
                                     <div>
-                                        <img src="{{ \TCG\Voyager\Facades\Voyager::image($portfolioItem->photo) }}" class="w-full" alt="...">
+                                        <img src="{{ \TCG\Voyager\Facades\Voyager::image($portfolioItem->photo) }}" class="w-full" alt="{{ $portfolioItem->getTranslatedAttribute('name', session('locale'))  }}" width="400" height="300" loading="lazy">
                                     </div>
                                     <div class="p-3 p-md-5 position-absolute bottom-0 bg6-color w-100 project-content z-2">
                                         <h4 class="p1-color fs-five mb-2 mb-md-4">
@@ -404,7 +444,7 @@
                                 <div class="col-sm-6 col-md-4 col-lg-3 aos-init" data-aos="fade-up" data-aos-duration="700">
                                     <div class="single_project position-relative z-1">
                                         <div>
-                                            <img src="{{ \TCG\Voyager\Facades\Voyager::image($child->photo) }}" class="w-full" alt="...">
+                                            <img src="{{ \TCG\Voyager\Facades\Voyager::image($child->photo) }}" class="w-full" alt="{{ $child->getTranslatedAttribute('name', session('locale'))  }}" width="400" height="300" loading="lazy">
                                         </div>
                                         <div class="p-3 p-md-5 position-absolute bottom-0 bg6-color w-100 project-content z-2">
                                             <h4 class="p1-color fs-five mb-2 mb-md-4">
@@ -1210,7 +1250,7 @@
                     <div class="col-sm-6 col-md-4 col-xl-3 aos-init aos-animate" data-aos-delay="{{ ($key+10) * 10 }}" data-aos="fade-up">
                         <div class="single_team position-relative z-1 h-100">
                             <div>
-                                <img src="{{ \TCG\Voyager\Facades\Voyager::image($teamMember->photo) }}" alt="team" height="480">
+                                <img src="{{ \TCG\Voyager\Facades\Voyager::image($teamMember->photo) }}" alt="{{ $teamMember->name }} {{ $teamMember->surname }}" width="400" height="480" loading="lazy">
                             </div>
                             <div class="team-content p-3 p-md-5 position-absolute bottom-0 bg12-color">
                                 <div class="position-absolute bottom-0 pb-6 pb-md-12">
@@ -1588,9 +1628,9 @@
                             {{ __('description') }}
                         </p>
                         <div
-                            class="mt-5 mt-lg-10 d-flex flex-wrap gap-4 gap-lg-8 d-flex align-items-center"
+                            class="mt-5 mt-lg-10 d-flex flex-wrap gap-4 gap-lg-5 d-flex align-items-center"
                         >
-                            <a href="{{ url('/contact') }}" class="btn p6-color">
+                            <a href="{{ url('/contact') }}" class="btn p6-color" style="display:flex; width: 295px; ">
                                 <span class="btn-text-0">{{ __('get_quotes') }}</span>
                                 <span class="btn-text-1">{{ __('get_quotes') }}</span>
                             </a>
@@ -1605,11 +1645,7 @@
                                         <img src="./images/chooseImg.webp" alt="..." />
                                     </div>
                                 </div>
-                                <a
-                                    href="tel:+998901832233"
-                                    class="p5-color fw-semibold fs-six p6-color"
-                                >+998 (90) 183-22-33</a
-                                >
+                                <a href="tel:+998991832233" class="fw-semibold fs-six p6-color" >+998 (99) 183-22-33</a>
                             </div>
                         </div>
                     </div>
@@ -1640,10 +1676,10 @@
                             <div class="rounded blog_card border cus-border border-six">
                                 <div class="single_blog position-relative z-1">
                                     <div class="overflow-hidden">
-                                        <img src="{{ \TCG\Voyager\Facades\Voyager::image($blogItem->images) }}" alt="{{ $blogItem->getTranslatedAttribute('title', session('locale')) }}" height="304" class="rounded-top w-full blog_image">
+                                        <img src="{{ \TCG\Voyager\Facades\Voyager::image($blogItem->images) }}" alt="{{ $blogItem->getTranslatedAttribute('title', session('locale')) }}" width="400" height="304" loading="lazy" class="rounded-top w-full blog_image">
                                     </div>
                                     <div class="p-3 p-md-5 position-absolute bottom-0 w-100 blog-content z-2 d-flex gap-3 align-items-end justify-content-start">
-                                        <img src="../images/logo.jpg" alt="{{ $blogItem->getTranslatedAttribute('title', session('locale')) }}" width="40" height="40" class="rounded-pill">
+                                        <img src="../images/logo.jpg" alt="WellSoft Logo" width="40" height="40" loading="lazy" class="rounded-pill">
                                         <div>
                                             <h4 class="p6-color fs-ten fw-semibold">WellSoft</h4>
                                             <span class="p3-color fs-seven">{{ \Carbon\Carbon::parse($blogItem->created_at)->format('F Y') }}</span>
@@ -1719,7 +1755,7 @@
                     <div class="d-sm-flex gap-3 gap-lg-6 mb-4 mb-md-8">
                         <div class="w-100">
                             <label class="p4-color fs-ten mb-1">{{__('name')}}:</label>
-                            <input type="text" name="name" class="p4-color border cus-border border-six px-3 px-md-6 py-2 py-md-4 rounded" placeholder="Habib Muslim" id="name">
+                            <input type="text" name="name" class="p4-color border cus-border border-six px-3 px-md-6 py-2 py-md-4 rounded" placeholder="Habibulloh Muslimov" id="name">
                         </div>
                         <div class="w-100 mt-3 mt-sm-0">
                             <label class="p4-color fs-ten mb-1">{{ __('contactType') }}:</label>
@@ -1734,7 +1770,7 @@
                         <label class="p4-color fs-ten mb-1">{{ __('message') }}:</label>
                         <textarea name="message" class="h-135 p4-color border cus-border border-six px-3 px-md-6 py-2 py-md-4 rounded" placeholder="ERP system" id="message"></textarea>
                     </div>
-                    <button type="submit" class="btn2 p6-color" id="contact-submit-btn">
+                    <button type="submit" class="btn2 p6-color w-100" id="contact-submit-btn">
                         <span class="btn-text-0">{{ __('sendMessage') }}</span>
                         <span class="btn-text-1">{{ __('sendMessage') }}</span>
                     </button>
@@ -1793,7 +1829,7 @@
                     @foreach($partner->partnerInfo as $partnerInfo)
                         <div class="swiper-slide">
                             <div class="px-4 px-md-8 py-5 py-md-10 bg13-color d-flex align-items-center justify-content-center" >
-                                <img src="{{ \TCG\Voyager\Facades\Voyager::image($partnerInfo->logo) }}" alt="logo" />
+                                <img src="{{ \TCG\Voyager\Facades\Voyager::image($partnerInfo->logo) }}" alt="Partner Logo" width="150" height="60" loading="lazy" />
                             </div>
                         </div>
                     @endforeach

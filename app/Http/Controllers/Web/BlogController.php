@@ -23,6 +23,6 @@ class BlogController extends Controller
     {
         $blogItem = $blogItem->load(['services', 'blog.webMenu']);
 
-        return view('pages.blog_details', compact('blogItem'));
+        return view('pages.blogdetails', compact('blogItem'));
     }
 }

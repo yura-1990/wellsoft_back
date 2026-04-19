@@ -1,29 +1,30 @@
 
 @extends('.layouts.app')
-@section('metaTitle', __('meta_title'))
-@section('metaDescription', __('meta_description'))
-@section('metaKeywords', __('meta_keywords'))
+@section('title', __('portfolio_meta_title'))
+@section('description', __('portfolio_meta_description'))
+@section('keywords', __('portfolio_meta_keywords'))
 @section('main')
     <!-- Hero section start -->
     <section class="particial-bg">
-        <div id="particles-js">
+        <div>
             <div class="particles_hero">
                 <div class="container h-100">
-                    <div class="row pt-20 h-100">
-                        <div class="col-lg-6 h-100">
+                    <div class="row home-sizing">
+                        <div class="col-lg-8 h-100">
                             <div
-                                class="d-flex align-items-center justify-content-center h-100"
+                                class="d-flex align-items-start justify-content-center h-100"
                             >
                                 @foreach($portfolios as $portfolio)
                                     <div>
 
-                                        <h2
+                                        <h1
                                             class="fs-one fw-bold mb-3 mb-lg-5 p3-color"
                                             data-aos="fade-up"
                                             data-aos-duration="800"
+                                            style="margin-top: 250px"
                                         >
-                                            {{ $portfolio->webMenu->getTranslatedAttribute('name', session('locale')) }}
-                                        </h2>
+                                            {{ __('portfolio_meta_title') }}
+                                        </h1>
                                         <p
                                             class="p6-color fs-ten"
                                             data-aos="fade-down"
@@ -68,7 +69,7 @@
                         <div class="col-sm-6 col-md-4 col-lg-3 aos-init" data-aos="fade-up" data-aos-duration="700">
                             <div class="single_project position-relative z-1">
                                 <div>
-                                    <img src="{{ \TCG\Voyager\Facades\Voyager::image($portfolioItem->photo) }}" class="w-full" alt="...">
+                                    <img src="{{ \TCG\Voyager\Facades\Voyager::image($portfolioItem->photo) }}" class="w-full" alt="{{ $portfolioItem->getTranslatedAttribute('name', session('locale'))  }}" width="400" height="300" loading="lazy">
                                 </div>
                                 <div class="p-3 p-md-5 position-absolute bottom-0 bg6-color w-100 project-content z-2">
                                     <h4 class="p1-color fs-five mb-2 mb-md-4">
@@ -82,7 +83,7 @@
                             <div class="col-sm-6 col-md-4 col-lg-3 aos-init" data-aos="fade-up" data-aos-duration="700">
                                 <div class="single_project position-relative z-1">
                                     <div>
-                                        <img src="{{ \TCG\Voyager\Facades\Voyager::image($child->photo) }}" class="w-full" alt="...">
+                                            <img src="{{ \TCG\Voyager\Facades\Voyager::image($child->photo) }}" class="w-full" alt="{{ $child->getTranslatedAttribute('name', session('locale'))  }}" width="400" height="300" loading="lazy">
                                     </div>
                                     <div class="p-3 p-md-5 position-absolute bottom-0 bg6-color w-100 project-content z-2">
                                         <h4 class="p1-color fs-five mb-2 mb-md-4">
@@ -103,7 +104,7 @@
                             <div class="col-sm-6 col-md-4 col-lg-3 aos-init" data-aos="fade-up" data-aos-duration="700">
                                 <div class="single_project position-relative z-1">
                                     <div>
-                                        <img src="{{ \TCG\Voyager\Facades\Voyager::image($portfolioItem->photo) }}" class="w-full" alt="...">
+                                        <img src="{{ \TCG\Voyager\Facades\Voyager::image($portfolioItem->photo) }}" class="w-full" alt="{{ $portfolioItem->getTranslatedAttribute('name', session('locale'))  }}" width="400" height="300" loading="lazy">
                                     </div>
                                     <div class="p-3 p-md-5 position-absolute bottom-0 bg6-color w-100 project-content z-2">
                                         <h4 class="p1-color fs-five mb-2 mb-md-4">
@@ -117,7 +118,7 @@
                                 <div class="col-sm-6 col-md-4 col-lg-3 aos-init" data-aos="fade-up" data-aos-duration="700">
                                     <div class="single_project position-relative z-1">
                                         <div>
-                                            <img src="{{ \TCG\Voyager\Facades\Voyager::image($child->photo) }}" class="w-full" alt="...">
+                                                <img src="{{ \TCG\Voyager\Facades\Voyager::image($child->photo) }}" class="w-full" alt="{{ $child->getTranslatedAttribute('name', session('locale'))  }}" width="400" height="300" loading="lazy">
                                         </div>
                                         <div class="p-3 p-md-5 position-absolute bottom-0 bg6-color w-100 project-content z-2">
                                             <h4 class="p1-color fs-five mb-2 mb-md-4">

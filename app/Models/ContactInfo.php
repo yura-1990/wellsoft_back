@@ -10,7 +10,7 @@ class ContactInfo extends Model
 {
     use HasFactory, Translatable;
 
-    protected array $translatable = ['type'];
+    protected array $translatable = ['type', 'info'];
     protected $guarded = ['id'];
 
     public function child()

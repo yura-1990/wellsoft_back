@@ -1,28 +1,30 @@
 
 @extends('.layouts.app')
-@section('metaTitle', __('meta_title'))
-@section('metaDescription', __('meta_description'))
-@section('metaKeywords', __('meta_keywords'))
+@section('title', __('services_meta_title'))
+@section('description', __('services_meta_description'))
+@section('keywords', __('services_meta_keywords'))
 @section('main')
 <!-- Hero section start -->
         <section class="particial-bg">
             <div id="particles-js">
-                <div class="particles_hero">
+                <div class="">
                     <div class="container h-100">
-                        <div class="row pt-20 h-100">
+                        <div class="row home-sizing" >
                             <div class="col-lg-6 h-100">
                                 <div
-                                    class="d-flex align-items-center justify-content-center h-100"
+                                    class="d-flex align-items-start justify-content-center h-100"
                                 >
-                                    @foreach($services as $service)
                                     <div>
-                                        <h2
+                                    @foreach($services as $service)
+
+                                        <h1
                                             class="fs-one fw-bold mb-3 mb-lg-5 p3-color"
                                             data-aos="fade-up"
                                             data-aos-duration="800"
+                                            style="margin-top: 150px"
                                         >
-                                            {{ $service->webMenu->getTranslatedAttribute('name', session('locale')) }}
-                                        </h2>
+                                            {{ __('services_meta_title') }}
+                                        </h1>
                                         <p
                                             class="p6-color fs-ten"
                                             data-aos="fade-down"
@@ -30,10 +32,31 @@
                                         >
                                             {{ $service->getTranslatedAttribute('description', session('locale')) }}
                                         </p>
-                                    </div>
+
                                     @endforeach
+                                    
+                                    <div class="mt-5 d-flex flex-wrap gap-4 gap-lg-5 align-items-center aos-init" data-aos="fade-up" data-aos-duration="800">
+                                        <a href="/contact" class="btn p6-color" style="display:flex; width: 295px; " aria-label="Get Quotes">
+                                            <span class="btn-text-0">{{ __('get_quotes') }}</span>
+                                            <span class="btn-text-1">{{ __('get_quotes') }}</span>
+                                        </a>
+                                        <div class="d-flex align-items-center gap-lg-5">
+                                            <div class="d-flex">
+                                                <div class="choose_icon_width bg1-color d-flex flex-shrink-0 justify-content-center align-items-center">
+                                                    <i class="ph ph-phone-call text-white fs-three" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="choose_icon_width choose_img">
+                                                    <img src="../images/chooseImg.webp" alt="Service Representative" width="60" height="60" loading="lazy">
+                                                </div>
+                                            </div>
+                                            <a href="tel:+998901832233" class=" fw-semibold fs-six " aria-label="Call us">+998 (90) 183 22 33</a>
+                                        </div>
+                                    </div>
+                                    </div>
                                 </div>
+                           
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -60,7 +83,8 @@
 {{--                    </a>--}}
 {{--                </div>--}}
             </div>
-            <div class="row g-2 g-lg-5 mt-7 mt-lg-15">
+            <div class="w-100" style="box-shadow: 0px 0px 3px #0A2E6B; background: #fff; height: 0.1px; margin: 25px 0;"></div>
+        <div class="row g-2 g-lg-5">
                 @foreach($service->serviceItems as $serviceItem)
                     <div
                         class="col-12 col-sm-6 col-xl-4"
@@ -70,12 +94,25 @@
                         <div
                             class="text-center px-10 py-8 hover:bg6-color service_card_hover"
                         >
-                            <img
-                                src="{{ \TCG\Voyager\Facades\Voyager::image($serviceItem->icon) }}"
-                                alt="{{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}"
-                                width="80"
-                                height="80"
-                            />
+                            <div class="d-flex justify-content-center">
+                                <img
+                                        src="{{ \TCG\Voyager\Facades\Voyager::image($serviceItem->icon_dark) }}"
+                                        alt="{{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}"
+                                        width="80"
+                                        height="80"
+                                        loading="lazy"
+                                        class="mode dark"
+                                />
+
+                                <img
+                                        src="{{ \TCG\Voyager\Facades\Voyager::image($serviceItem->icon_light) }}"
+                                        alt="{{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}"
+                                        width="80"
+                                        height="80"
+                                        loading="lazy"
+                                        class="mode light"
+                                />
+                            </div>
                             <h4 class="fs-five fw-semibold p8-color mt-8 mb-4">
                                 {{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}
                             </h4>

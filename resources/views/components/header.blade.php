@@ -1,6 +1,7 @@
 @php use Illuminate\Support\Facades\Request; @endphp
     <!-- header-section start -->
 <header class="header-section header-menu w-100 pt-1 pt-lg-0 pb-3 pb-lg-0">
+    
     <div class="navbar_mainhead header-fixed w-100">
         <div class="container">
             <div class="row align-items-center">
@@ -12,23 +13,27 @@
                             <a
                                 href="/"
                                 class="navbar-brand d-none d-sm-flex align-items-center gap-2"
+                                aria-label="WELLSOFT Home"
                             >
                                 <img
                                     src="{{ asset('/images/logodark.png') }}"
                                     class="logo"
-                                    alt="logo"
+                                    alt="WELLSOFT Logo"
                                     width="150"
+                                    height="40"
                                 />
                             </a>
                             <a
                                 href="/"
                                 class="navbar-brand d-sm-none d-flex align-items-center gap-2"
+                                aria-label="WELLSOFT Home"
                             >
                                 <img
                                     src="{{ asset('/images/logodark.png') }}"
                                     class="logo"
-                                    alt="logo"
+                                    alt="WELLSOFT Logo"
                                     width="100"
+                                    height="27"
                                 />
                             </a>
                         </div>
@@ -45,7 +50,7 @@
                                         <li class="dropdown show-dropdown dropdown_btn">
                                             <button
                                                 type="button"
-                                                aria-label="Navbar Dropdown Button"
+                                                aria-label="{{ $webmenu->getTranslatedAttribute('name', session('locale')) }} Dropdown"
                                                 class=" {{ $isDropdownActive ? 'active' : '' }} dropdown-toggle dropdown-nav d-flex gap-1 align-items-center fs-ten"
                                             >
                                                 {{ $webmenu->getTranslatedAttribute('name', session('locale')) }} <i class="ph-bold ph-caret-down"></i>
@@ -79,6 +84,7 @@
                             >
                                 <button
                                     id="toggle"
+                                    aria-label="Toggle Dark Mode"
                                     class="dark_btn d-flex justify-content-center align-items-center fs-three p6-color mood_toggle"
                                 >
                                     <i class="ph-fill ph-moon fs-five" id="mood_icon"></i>
@@ -87,7 +93,7 @@
                                 @foreach($languages as $language)
                                     @if(session('locale') !== $language)
                                     <div class="dark_btn  d-flex justify-content-center align-items-center fs-three p6-color mood_toggle">
-                                        <a href="{{ url("/locales/$language") }}" class="text-uppercase ">{{ $language }}</a>
+                                        <a href="{{ url("/locales/$language") }}" class="text-uppercase " aria-label="Switch to {{ strtoupper($language) }}">{{ $language }}</a>
                                     </div>
                                     @endif
                                 @endforeach
@@ -100,7 +106,7 @@
                                 class="navbar-toggler "
                                 type="button"
                                 data-bs-toggle="collapse"
-                                aria-label="Navbar Toggler"
+                                aria-label="Toggle Navigation Menu"
                                 data-bs-target="#navbar-content"
                                 aria-expanded="true"
                                 id="nav-icon3"

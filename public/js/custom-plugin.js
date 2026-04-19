@@ -2,16 +2,87 @@ document.addEventListener("DOMContentLoaded", function () {
     // header mood icon
     const icon = document.getElementById("mood_icon");
     const mood_toggle = document.getElementById("toggle");
+    const mode_image = document.querySelectorAll('.mode')
+
+    const mode = localStorage.getItem('mode')
+
+    if (!mode){
+        localStorage.setItem('mode', 'light')
+    }
+
+    if (mode === 'light'){
+        if (mode_image){
+            mode_image.forEach(el=>{
+                if (el.classList.contains('dark')){
+                    el.style = 'display: none; background: transparent;'
+                } else {
+                    el.style = 'display: flex; background: transparent;'
+                }
+            })
+        }
+    } else if(mode === 'dark'){
+        if (mode_image){
+            mode_image.forEach(el=>{
+                if (el.classList.contains('light')){
+                    el.style = 'display: none; background: transparent;'
+                } else {
+                    el.style = 'display: flex; background: transparent;'
+                }
+            })
+        }
+    }
 
     mood_toggle &&
       mood_toggle.addEventListener("click", function () {
+        const mode = localStorage.getItem('mode')
+
         if (icon.classList.contains("ph-sun")) {
-          icon.classList.remove("ph-sun");
-          icon.classList.add("ph-moon");
+            icon.classList.remove("ph-sun");
+            icon.classList.add("ph-moon");
+            mode_image.forEach(el=>{
+                if (el.classList.contains('dark')){
+                    el.style = 'display: none; background: transparent; justify-content: center;'
+                } else {
+                    el.style = 'display: block; background: transparent; justify-content: center;'
+                }
+            })
+
         } else {
-          icon.classList.add("ph-sun");
-          icon.classList.remove("ph-moon");
+            icon.classList.add("ph-sun");
+            icon.classList.remove("ph-moon");
+            mode_image.forEach(el=>{
+                if (el.classList.contains('light')){
+                    el.style = 'display: none; background: transparent; justify-content: center;'
+                } else {
+                    el.style = 'display: block; background: transparent; justify-content: center;'
+                }
+            })
         }
+
+      // if (mode === 'light'){
+      //     console.log('light')
+      //     if (mode_image){
+      //         mode_image.forEach(el=>{
+      //             if (el.classList.contains('dark')){
+      //                 el.style = 'display: none; background: transparent;'
+      //             } else {
+      //                 el.style = 'display: block; background: transparent;'
+      //             }
+      //         })
+      //     }
+      // } else if(mode === 'dark'){
+      //     console.log('dark')
+      //     if (mode_image){
+      //         mode_image.forEach(el=>{
+      //             if (el.classList.contains('light')){
+      //                 el.style = 'display: none; background: transparent;'
+      //             } else {
+      //                 el.style = 'display: block; background: transparent;'
+      //             }
+      //         })
+      //     }
+      // }
+
       });
 
     // service slider
@@ -198,16 +269,18 @@ document.addEventListener("DOMContentLoaded", function () {
       body.classList.add("active");
     }
 
-    toggle.addEventListener("click", () => {
-      body.classList.toggle("dark");
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+          body.classList.toggle("dark");
 
-      if (!body.classList.contains("dark")) {
-        return localStorage.setItem("mode", "light");
-      }
-      localStorage.setItem("mode", "dark");
-    });
+          if (!body.classList.contains("dark")) {
+            return localStorage.setItem("mode", "light");
+          }
+          localStorage.setItem("mode", "dark");
+        });
 
-    toggle.addEventListener("click", () => toggle.classList.toggle("active"));
+        toggle.addEventListener("click", () => toggle.classList.toggle("active"));
+    }
     if (document.body.classList.contains("dark")) {
       icon.classList.add("ph-sun");
       icon.classList.remove("ph-moon");
@@ -250,6 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
       btnEl.innerHTML = "ltr";
     }
     function toggleDirection() {
+      if (!btnEl) return;
       if (btnEl.innerHTML === "rtl") {
         htmlTag.dir = "rtl";
         btnEl.innerHTML = "ltr";
@@ -260,6 +334,8 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("dir", "ltr");
       }
     }
-    btnEl.addEventListener("click", toggleDirection);
+    if (btnEl) {
+        btnEl.addEventListener("click", toggleDirection);
+    }
     //end
   });

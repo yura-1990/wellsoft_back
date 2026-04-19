@@ -17,17 +17,16 @@ class ContentSecurityPolicy
     {
         $response = $next($request);
 
-        // Allow Google Analytics, Google domains, and other required domains
-        $response->headers->set('Content-Security-Policy', "
-            default-src 'self';
-            script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://accounts.google.com https://www.googletagmanager.com;
-            style-src 'self' 'unsafe-inline';
-            img-src 'self' data: https://www.google-analytics.com;
-            connect-src 'self' https://www.google-analytics.com https://accounts.google.com;
-            font-src 'self';
-            frame-src https://accounts.google.com;
-            upgrade-insecure-requests;
-        ");
+        // Correctly formatted CSP header
+        $cspHeader = "default-src 'self'; "
+           . "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://accounts.google.com https://www.googletagmanager.com https://cdnjs.cloudflare.com https://apis.google.com; "
+           . "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+           . "font-src 'self' https://fonts.gstatic.com; "
+           . "img-src 'self' data: https://www.google-analytics.com; "
+           . "connect-src 'self' https://www.google-analytics.com https://accounts.google.com; "
+           . "frame-src https://accounts.google.com https://content.googleapis.com; "
+           . "upgrade-insecure-requests;";
+        $response->headers->set('Content-Security-Policy', $cspHeader);
 
         return $response;
     }

@@ -6,23 +6,24 @@
 @section('main')
     <!-- Hero section start -->
     <section class="particial-bg">
-        <div id="particles-js">
+        <div>
             <div class="particles_hero">
                 <div class="container h-100">
-                    <div class="row pt-20 h-100">
+                    <div class="row home-sizing">
                         <div class="col-lg-6 h-100">
                             <div
-                                class="d-flex align-items-center justify-content-center h-100"
+                                class="d-flex align-items-start justify-content-center h-100"
                             >
                                 @foreach($terms as $term)
                                     <div>
-
                                         <h2
                                             class="fs-one fw-bold mb-3 mb-lg-5 p3-color"
                                             data-aos="fade-up"
                                             data-aos-duration="800"
+                                            style="margin-top: 250px"
                                         >
                                             {{ $term->webMenu->getTranslatedAttribute('name', session('locale')) }}
+
                                         </h2>
                                         <p
                                             class="p6-color fs-ten"

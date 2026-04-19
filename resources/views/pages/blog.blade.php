@@ -1,29 +1,29 @@
 
 @extends('.layouts.app')
-@section('metaTitle', __('meta_title'))
-@section('metaDescription', __('meta_description'))
-@section('metaKeywords', __('meta_keywords'))
+@section('title', __('blog_meta_title'))
+@section('description', __('blog_meta_description'))
+@section('keywords', __('blog_meta_keywords'))
 @section('main')
     <!-- Hero section start -->
     <section class="particial-bg">
-        <div id="particles-js">
+        <div id="">
             <div class="particles_hero">
                 <div class="container h-100">
-                    <div class="row pt-20 h-100">
-                        <div class="col-lg-6 h-100">
-                            <div
-                                class="d-flex align-items-center justify-content-center h-100"
+                    <div class="row home-sizing">
+                        <div class="col-lg-8 h-100">
+                            <div class="d-flex align-items-start justify-content-center h-100"
                             >
                             @foreach($blogs as $blog)
                                 <div>
 
-                                    <h2
+                                    <h1
                                         class="fs-one fw-bold mb-3 mb-lg-5 p3-color"
                                         data-aos="fade-up"
                                         data-aos-duration="800"
+                                        style="margin-top: 250px"
                                     >
-                                        {{ $blog->webMenu->getTranslatedAttribute('name', session('locale')) }}
-                                    </h2>
+                                        {{ __('blog_meta_title') }}
+                                    </h1>
                                     <p
                                         class="p6-color fs-ten"
                                         data-aos="fade-down"
@@ -61,10 +61,10 @@
                                 <div class="rounded blog_card border cus-border border-six">
                                     <div class="single_blog position-relative z-1">
                                         <div class="overflow-hidden">
-                                            <img src="{{ \TCG\Voyager\Facades\Voyager::image($blogItem->images) }}" alt="{{ $blogItem->getTranslatedAttribute('title', session('locale')) }}" height="304" class="rounded-top w-full blog_image">
+                                            <img src="{{ \TCG\Voyager\Facades\Voyager::image($blogItem->images) }}" alt="{{ $blogItem->getTranslatedAttribute('title', session('locale')) }}" width="400" height="304" loading="lazy" class="rounded-top w-full blog_image">
                                         </div>
                                         <div class="p-3 p-md-5 position-absolute bottom-0 w-100 blog-content z-2 d-flex gap-3 align-items-end justify-content-start">
-                                            <img src="../images/logo.jpg" alt="{{ $blogItem->getTranslatedAttribute('title', session('locale')) }}" width="40" height="40" class="rounded-pill">
+                                            <img src="../images/logo.jpg" alt="WellSoft Logo" width="40" height="40" loading="lazy" class="rounded-pill">
                                             <div>
                                                 <h4 class="p6-color fs-ten fw-semibold">WellSoft</h4>
                                                 <span class="p3-color fs-seven">{{ \Carbon\Carbon::parse($blogItem->created_at)->format('F Y') }}</span>

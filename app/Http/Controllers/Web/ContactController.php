@@ -12,8 +12,14 @@ class ContactController extends Controller
 {
     public function contact(Request $request)
     {
-        $contacts = Contact::query()->with(['webMenu'])->get();
-        $contactInfos = ContactInfo::query()->whereNull('parent_id')->with('children')->get();
+        $contacts = Contact::query()
+            ->with(['webMenu'])
+            ->get();
+        
+        $contactInfos = ContactInfo::query()
+            ->whereNull('parent_id')
+            ->with('children')
+            ->get();
 
         return view('pages.contact', [
             'contacts' => $contacts,

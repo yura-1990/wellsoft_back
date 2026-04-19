@@ -1,28 +1,29 @@
 
 @extends('.layouts.app')
-@section('metaTitle', __('meta_title'))
-@section('metaDescription', __('meta_description'))
-@section('metaKeywords', __('meta_keywords'))
+@section('title', __('contact_meta_title'))
+@section('description', __('contact_meta_description'))
+@section('keywords', __('contact_meta_keywords'))
 @section('main')
     <!-- Hero section start -->
     <section class="particial-bg">
-        <div id="particles-js">
+        <div>
             <div class="particles_hero">
                 <div class="container h-100">
-                    <div class="row pt-20 h-100">
-                        <div class="col-lg-6 h-100">
+                    <div class="row home-sizing" >
+                        <div class="col-lg-8 h-100">
                             <div
-                                class="d-flex align-items-center justify-content-center h-100"
+                                class="d-flex align-items-start justify-content-center h-100"
                             >
                                 @foreach($contacts as $contact)
                                     <div>
-                                        <h2
+                                        <h1
                                             class="fs-one fw-bold mb-3 mb-lg-5 p3-color"
                                             data-aos="fade-up"
                                             data-aos-duration="800"
+                                            style="margin-top: 250px"
                                         >
-                                            {{ $contact->webMenu->getTranslatedAttribute('name', session('locale')) }}
-                                        </h2>
+                                            {{ __('contact_meta_title') }}
+                                        </h1>
                                         <p
                                             class="p6-color fs-ten"
                                             data-aos="fade-down"
@@ -60,7 +61,12 @@
                         <div class="d-sm-flex gap-3 gap-lg-6 mb-4 mb-md-8">
                             <div class="w-100">
                                 <label class="p4-color fs-ten mb-1">{{__('name')}}:</label>
-                                <input type="text" name="name" class="p4-color border cus-border border-six px-3 px-md-6 py-2 py-md-4 rounded" placeholder="Habib Muslim" id="name">
+                                <input type="text"
+                                       name="name"
+                                       class="p4-color border cus-border border-six px-3 px-md-6 py-2 py-md-4 rounded"
+                                       placeholder="Habibulloh Muslimov"
+                                       id="name"
+                                >
                             </div>
                             <div class="w-100 mt-3 mt-sm-0">
                                 <label class="p4-color fs-ten mb-1">{{ __('contactType') }}:</label>
@@ -75,7 +81,7 @@
                             <label class="p4-color fs-ten mb-1">{{ __('message') }}:</label>
                             <textarea name="message" class="h-135 p4-color border cus-border border-six px-3 px-md-6 py-2 py-md-4 rounded" placeholder="ERP system" id="message"></textarea>
                         </div>
-                        <button type="submit" class="btn2 p6-color" id="contact-submit-btn">
+                        <button type="submit" class="btn2 p6-color w-100" id="contact-submit-btn">
                             <span class="btn-text-0">{{ __('sendMessage') }}</span>
                             <span class="btn-text-1">{{ __('sendMessage') }}</span>
                         </button>
@@ -89,7 +95,7 @@
                                 @if($contactInfo->icon)
                                     <a href="{{ $contactInfo->url }}" target="_blank" class="contact_icon d-flex justify-content-start gap-2 align-items-center">
                                         <i class="{{ $contactInfo->icon }}"></i>
-                                        {{ $contactInfo->info }}
+                                        {{ $contactInfo->getTranslatedAttribute('info', session('locale')) }}
                                     </a>
                                 @endif
 {{--                                @if(count($contactInfo->children)>0)--}}
