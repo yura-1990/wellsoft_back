@@ -16,18 +16,17 @@
                         $filteredMenu = $menus->filter(fn($m) => $m->url == null);
                     @endphp
 
-                    <h4 class="fs-five p6-color mb-3 mb-md-5">
+                    <h3 class="fs-five p6-color mb-3 mb-md-5">
                         @foreach($filteredMenu as $item)
                             {{ $item->getTranslatedAttribute('name', session('locale')) }}
                         @endforeach
-                    </h4>
+                    </h3>
 
                     @foreach($menus as $menuItem)
                         @if($menuItem->url && $menuItem->url !== 'services' && $menuItem->url !== 'blog' && $menuItem->url !== 'contact' && $menuItem->url !== 'team')
                             <a
                                 href="{{ $menuItem->url }}"
                                 class="d-flex align-items-center flex-shrink-0 gap-2 mb-2 mb-md-3"
-                                aria-label="{{ $menuItem->getTranslatedAttribute('name', session('locale')) }}"
                             >
                                 <div>
                                     <img src="{{asset('/images/point.webp')}}" alt="Bullet point" width="12" height="12" loading="lazy" />
@@ -40,18 +39,18 @@
 
                     <div class="d-xl-none d-block " style="margin-top: 35px;">
                         <div class="col-12 col-xl-3">
-                            <h4 class="fs-five p6-color mb-3 mb-md-5">{{ __('contacts') }}</h4>
+                            <h3 class="fs-five p6-color mb-3 mb-md-5">{{ __('contacts') }}</h3>
                             <div class="d-flex gap-2 gap-md-4 align-items-center mb-3 mb-md-2" >
                                 <i class="ph-fill ph-map-pin fs-six p6-color ms-1" aria-hidden="true"></i>
                                 <span>{{ __('address')  }}</span>
                             </div>
                             <div class="d-flex gap-2 gap-md-4 align-items-center mb-3 mb-md-2" >
                                 <i class="ph-fill ph-phone-incoming fs-six p6-color ms-1" aria-hidden="true"></i>
-                                <a href="tel:+998991832233" aria-label="Call us at +998 (99) 183-22-33">+998 (99) 183-22-33</a>
+                                <a href="tel:+998991832233">+998 (99) 183-22-33</a>
                             </div>
                             <div class="d-flex gap-2 gap-md-4 align-items-center">
                                 <i class="ph-fill ph-envelope fs-six p6-color ms-1" aria-hidden="true"></i>
-                                <a href="mailto:yurayur1990@gmail.com" aria-label="Email us at support@support.com">support@support.com</a>
+                                <a href="mailto:yurayur1990@gmail.com">support@support.com</a>
                             </div>
                             <div class="d-flex gap-2 gap-md-4 align-items-center pt-5">
                                 <div class="d-flex flex-wrap gap-3 mt-3">
@@ -85,10 +84,10 @@
                         @php
                             $wordArray = explode(' ', $service->getTranslatedAttribute('title', session('locale')))[0]
                         @endphp
-                        <h5 class="fs-five p6-color mb-3 mb-md-5">{{ str_replace(',', '', $wordArray) }}</h5>
+                        <h3 class="fs-five p6-color mb-3 mb-md-5">{{ str_replace(',', '', $wordArray) }}</h3>
 
                         @foreach($service->serviceItems as $serviceItem)
-                            <a href="{{ url('/services') }}" class="d-flex align-items-center flex-shrink-0 gap-2 mb-2 mb-md-3" aria-label="{{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}">
+                            <a href="{{ url('/services') }}" class="d-flex align-items-center flex-shrink-0 gap-2 mb-2 mb-md-3">
                                 <div> <img src="{{ asset('/images/point.webp') }}" alt="Bullet point" width="12" height="12" loading="lazy" /> </div>
                                 <span class="fs-ten p6-color fw-medium footer_tag" >{{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}</span
                                 >
@@ -98,7 +97,7 @@
                     @endforeach
                 </div>
                 <div class="col-12 col-xl-3 d-xl-block d-none">
-                    <h4 class="fs-five p6-color mb-3 mb-md-5">{{ __('contacts') }}</h4>
+                    <h3 class="fs-five p6-color mb-3 mb-md-5">{{ __('contacts') }}</h3>
                     <div
                         class="d-flex gap-2 gap-md-4 align-items-center mb-3 mb-md-5"
                     >
@@ -109,11 +108,11 @@
                         class="d-flex gap-2 gap-md-4 align-items-center mb-3 mb-md-5"
                     >
                         <i class="ph-fill ph-phone-incoming fs-six p6-color" aria-hidden="true"></i>
-                        <a href="tel:+998991832233" aria-label="Call us at +998 (99) 183-22-33">+998 (99) 183-22-33</a>
+                        <a href="tel:+998991832233">+998 (99) 183-22-33</a>
                     </div>
                     <div class="d-flex gap-2 gap-md-4 align-items-center">
                         <i class="ph-fill ph-envelope fs-six p6-color" aria-hidden="true"></i>
-                        <a href="mailto:rasul_umarov@wellsoft.uz" aria-label="Email us at rasul_umarov@wellsoft.uz">rasul_umarov@wellsoft.uz</a>
+                        <a href="mailto:rasul_umarov@wellsoft.uz">rasul_umarov@wellsoft.uz</a>
                     </div>
                     <div class="d-flex gap-2 gap-md-4 align-items-center mt-5">
                         <div class="d-flex flex-wrap gap-3">
@@ -157,7 +156,7 @@
         </div>
     </div>
     <div class="container pb-4 text-center">
-        <p class="p6-color fs-eleven opacity-50">
+        <p class="p6-color fs-eleven">
             {{ __('meta_title') }} — {{ __('meta_description') }}
         </p>
     </div>

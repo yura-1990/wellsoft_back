@@ -75,9 +75,7 @@
                                 </div>
                             </div>
                             <p class="p6-color mt-4 mt-lg-8">
-                                Technox is a HTML5 template based on Sass and Bootstrap 5 with
-                                modern and creative multipurpose design you can use Best
-                                services &amp; IT solutions.
+                                "Команда WELLSOFT разработала для нас современный интернет-магазин, который не только круто выглядит, но и приносит реальные продажи. Огромное спасибо за профессиональный подход и SEO-оптимизацию!"
                             </p>
                         </div>
                     </div><div class="swiper-slide swiper-slide-active" role="group" aria-label="3 / 4" data-swiper-slide-index="2" style="width: 408px; margin-right: 30px;">
@@ -99,9 +97,7 @@
                                 </div>
                             </div>
                             <p class="p6-color mt-4 mt-lg-8">
-                                Technox is a HTML5 template based on Sass and Bootstrap 5 with
-                                modern and creative multipurpose design you can use Best
-                                services &amp; IT solutions.
+                                "Как дизайнер, я очень требователен к деталям. Специалисты WELLSOFT превзошли мои ожидания: код чистый, верстка пиксель-в-пиксель, а скорость загрузки сайта просто потрясающая. Рекомендую!"
                             </p>
                         </div>
                     </div><div class="swiper-slide swiper-slide-next" role="group" aria-label="4 / 4" data-swiper-slide-index="3" style="width: 408px; margin-right: 30px;">
@@ -123,9 +119,7 @@
                                 </div>
                             </div>
                             <p class="p6-color mt-4 mt-lg-8">
-                                Technox is a HTML5 template based on Sass and Bootstrap 5 with
-                                modern and creative multipurpose design you can use Best
-                                services &amp; IT solutions.
+                                "Благодаря WELLSOFT наш бизнес вышел на новый уровень. Они разработали для нас удобный корпоративный портал и настроили рекламные кампании, которые увеличили поток клиентов в 3 раза."
                             </p>
                         </div>
                     </div><div class="swiper-slide" role="group" aria-label="1 / 4" data-swiper-slide-index="0" style="width: 408px; margin-right: 30px;">
@@ -147,9 +141,7 @@
                                 </div>
                             </div>
                             <p class="p6-color mt-4 mt-lg-8">
-                                Technox is a HTML5 template based on Sass and Bootstrap 5 with
-                                modern and creative multipurpose design you can use Best
-                                services &amp; IT solutions.
+                                "Отличная веб-студия в Ташкенте! Заказывали лендинг под ключ — всё сделали в срок, предложили классные креативные идеи и обеспечили полную техническую поддержку после запуска."
                             </p>
                         </div>
                     </div></div>

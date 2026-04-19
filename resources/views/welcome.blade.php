@@ -56,7 +56,7 @@
                                                     <img src="../images/chooseImg.webp" alt="Client Support Team" width="60" height="60">
                                                 </div>
                                             </div>
-                                            <a href="tel:+998991832233" class="fw-semibold fs-six" aria-label="Call us">+998 (99) 183 22 33</a>
+                                            <a href="tel:+998991832233" class="fw-semibold fs-six">+998 (99) 183 22 33</a>
                                         </div>
                                     </div>
                                 </div>
@@ -147,9 +147,9 @@
                                     class="mode light"
                             />
                         </div>
-                        <h4 class="fs-five fw-semibold p8-color mt-8 mb-4">
+                        <h3 class="fs-five fw-semibold p8-color mt-8 mb-4">
                             {{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}
-                        </h4>
+                        </h3>
                         <p class="p4-color fs-ten">
                             {{ $serviceItem->getTranslatedAttribute('description', session('locale')) }}
                         </p>
@@ -325,9 +325,9 @@
                                                      loading="lazy"
                                                      class="mode light"
                                                 >
-                                                <h5 class="fs-five p8-color mt-3 mt-lg-6 mb-2 mb-lg-4">
+                                                <h3 class="fs-five p8-color mt-3 mt-lg-6 mb-2 mb-lg-4">
                                                     {{ $aboutUsItemChild->getTranslatedAttribute('title', session('locale')) }}
-                                                </h5>
+                                                </h3>
                                                 <div class="fs-ten p4-color">
                                                     {!! $aboutUsItemChild->getTranslatedAttribute('info', session('locale')) !!}
                                                 </div>
@@ -350,7 +350,7 @@
                                                 <img src="../images/chooseImg.webp" alt="Choose WellSoft" width="60" height="60" loading="lazy">
                                             </div>
                                         </div>
-                                        <a href="tel:+998991832233" class="p4-color fw-semibold fs-six" aria-label="Call us">+998 (99) 183 22 33</a>
+                                        <a href="tel:+998991832233" class="p4-color fw-semibold fs-six">+998 (99) 183 22 33</a>
                                     </div>
                                 </div>
                             </div>
@@ -1642,7 +1642,7 @@
                                         <i class="ph ph-phone-call text-white fs-three"></i>
                                     </div>
                                     <div class="choose_icon_width choose_img">
-                                        <img src="./images/chooseImg.webp" alt="..." />
+                                        <img src="./images/chooseImg.webp" alt="..." width="40" height="40" loading="lazy" />
                                     </div>
                                 </div>
                                 <a href="tel:+998991832233" class="fw-semibold fs-six p6-color" >+998 (99) 183-22-33</a>
@@ -1780,7 +1780,7 @@
                 <div class="bg1-color px-5 px-lg-10 py-8 py-md-15 rounded-4">
                     @foreach($contactInfos as $contactInfo)
                         <div class="mb-5 mb-md-6 mb-xxl-11">
-                            <h4 class="fs-five p6-color mb-2">{{ $contactInfo->getTranslatedAttribute('type', session('locale')) }}</h4>
+                            <h3 class="fs-five p6-color mb-2">{{ $contactInfo->getTranslatedAttribute('type', session('locale')) }}</h3>
                             @if($contactInfo->icon)
                                 <a href="{{ $contactInfo->url }}" target="_blank" class="contact_icon d-flex justify-content-start gap-2 align-items-center">
                                     <i class="{{ $contactInfo->icon }}"></i>

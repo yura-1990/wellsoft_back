@@ -20,7 +20,7 @@
                                     class="logo"
                                     alt="WELLSOFT Logo"
                                     width="150"
-                                    height="40"
+                                    height="69"
                                 />
                             </a>
                             <a
@@ -33,7 +33,7 @@
                                     class="logo"
                                     alt="WELLSOFT Logo"
                                     width="100"
-                                    height="27"
+                                    height="46"
                                 />
                             </a>
                         </div>

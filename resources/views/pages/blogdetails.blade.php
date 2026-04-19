@@ -1,8 +1,8 @@
 
 @extends('.layouts.app')
-@section('metaTitle', __('meta_title'))
-@section('metaDescription', __('meta_description'))
-@section('metaKeywords', __('meta_keywords'))
+@section('title', $blogItem->getTranslatedAttribute('title', session('locale')) . ' | WELLSOFT')
+@section('description', \Illuminate\Support\Str::limit(strip_tags($blogItem->getTranslatedAttribute('description', session('locale'))), 160))
+@section('keywords', __('blog_meta_keywords'))
 @section('main')
     <!-- Hero section start -->
     <section class="particial-bg">

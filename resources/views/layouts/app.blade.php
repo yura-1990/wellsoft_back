@@ -60,7 +60,7 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
 
     <!-- Icons -->
     <script defer src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.0.3"></script>
@@ -149,11 +149,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     {{-- Custom scripts (defer is safe now — libraries above are already parsed) --}}
-    <script defer src="{{ asset('/js/main.js') }}"></script>
-    <script defer src="{{ asset('/js/plugins.js') }}"></script>
-    <script defer src="{{ asset('/js/particles.js') }}"></script>
-    <script defer src="{{ '/js/custom-plugin.js' }}"></script>
-    <script defer src="{{ asset('/js/animation.js') }}"></script>
+    <script defer src="{{ asset('/js/main.min.js') }}"></script>
+    <script defer src="{{ asset('/js/plugins.min.js') }}"></script>
+    <script defer src="{{ asset('/js/particles.min.js') }}"></script>
+    <script defer src="{{ '/js/custom-plugin.min.js' }}"></script>
+    <script defer src="{{ asset('/js/animation.min.js') }}"></script>
 
     {{-- AOS init: runs after everything is loaded --}}
     <script>

@@ -1,8 +1,8 @@
 
 @extends('.layouts.app')
-@section('metaTitle', __('meta_title'))
-@section('metaDescription', __('meta_description'))
-@section('metaKeywords', __('meta_keywords'))
+@section('title', __('terms_meta_title'))
+@section('description', __('terms_meta_description'))
+@section('keywords', __('terms_meta_keywords'))
 @section('main')
     <!-- Hero section start -->
     <section class="particial-bg">
