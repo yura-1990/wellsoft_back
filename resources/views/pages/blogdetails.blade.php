@@ -6,7 +6,7 @@
 @section('main')
     <!-- Hero section start -->
     <section class="particial-bg">
-        <div id="particles-js">
+        <div >
             <div class="particles_hero">
                 <div class="container h-100">
                     <div class="row home-sizing">

@@ -7,7 +7,7 @@
 
     @php
         $siteName = 'WELLSOFT';
-        $defaultTitle = 'Гибкие IT-решения и первоклассные услуги';
+        $defaultTitle = 'Разработка сайтов и IT-решений любой сложности';
         $defaultDescription = 'Ищете гибкие IT-решения и первоклассные услуги? WELLSOFT — профессиональная разработка сайтов, интернет-магазинов и корпоративных порталов в Ташкенте и Узбекистане. Закажите разработку под ключ!';
         $defaultKeywords = 'гибкие IT-решения, первоклассные услуги, разработка сайтов, создание сайтов, Ташкент, Узбекистан, заказать сайт, веб-студия';
         $defaultImage = asset('images/logo.png');
@@ -86,7 +86,7 @@
             "logo": "{{ asset('images/logo.png') }}",
             "image": "{{ $seoImage }}",
             "description": "{{ $defaultDescription }}",
-            "telephone": "+998901832233",
+            "telephone": "+998991832233",
             "priceRange": "$$",
             "address": {
                 "@type": "PostalAddress",

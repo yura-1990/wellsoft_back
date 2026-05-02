@@ -49,7 +49,7 @@
                                                     <img src="../images/chooseImg.webp" alt="Service Representative" width="60" height="60" loading="lazy">
                                                 </div>
                                             </div>
-                                            <a href="tel:+998901832233" class=" fw-semibold fs-six " aria-label="Call us">+998 (90) 183 22 33</a>
+                                            <a href="tel:+998991832233" class=" fw-semibold fs-six " aria-label="Call us">+998 (99) 183 22 33</a>
                                         </div>
                                     </div>
                                     </div>

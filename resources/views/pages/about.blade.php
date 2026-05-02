@@ -103,9 +103,9 @@
                                                     </div>
                                                     <div class="choose_icon_width choose_img">
                                                         <img src="../images/chooseImg.webp" alt="Client Support" width="60" height="60" loading="lazy">
-                                                    </div>
+                                                    </div>  
                                                 </div>
-                                                <a href="tel:+998901832233" class="p4-color fw-semibold fs-six" aria-label="Call us">+998 (90) 183 22 33</a>
+                                                <a href="tel:+998991832233" class="p4-color fw-semibold fs-six" aria-label="Call us">+998 (99) 183 22 33</a>
                                             </div>
                                         </div>
                         </div>

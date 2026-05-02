@@ -92,9 +92,9 @@ Route::get('/testimonials', function () {
     return view('pages.testimonials');
 });
 
-Route::get('/price', function () {
-    return view('pages.price');
-});
+// Route::get('/price', function () {
+//     return view('pages.price');
+// });
 
 Route::get('/faqs', function () {
     return view('pages.faqs');
