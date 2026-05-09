@@ -25,7 +25,7 @@
                     @foreach($menus as $menuItem)
                         @if($menuItem->url && $menuItem->url !== 'services' && $menuItem->url !== 'blog' && $menuItem->url !== 'contact' && $menuItem->url !== 'team')
                             <a
-                                href="{{ $menuItem->url }}"
+                                href="{{ url('/' . app()->getLocale() . '/' . ltrim($menuItem->url, '/')) }}"
                                 class="d-flex align-items-center flex-shrink-0 gap-2 mb-2 mb-md-3"
                             >
                                 <div>
@@ -87,7 +87,7 @@
                         <h3 class="fs-five p6-color mb-3 mb-md-5">{{ str_replace(',', '', $wordArray) }}</h3>
 
                         @foreach($service->serviceItems as $serviceItem)
-                            <a href="{{ url('/services') }}" class="d-flex align-items-center flex-shrink-0 gap-2 mb-2 mb-md-3">
+                            <a href="{{ url('/' . app()->getLocale() . '/services') }}" class="d-flex align-items-center flex-shrink-0 gap-2 mb-2 mb-md-3">
                                 <div> <img src="{{ asset('/images/point.webp') }}" alt="Bullet point" width="12" height="12" loading="lazy" /> </div>
                                 <span class="fs-ten p6-color fw-medium footer_tag" >{{ $serviceItem->getTranslatedAttribute('title', session('locale')) }}</span
                                 >
@@ -150,9 +150,9 @@
         <span class="p6-color sm:fs-ten" >{{ __('copyright') }}</span
         >
         <div class="d-flex gap-4">
-            <a href="{{ url('/terms') }}" class="p6-color sm:fs-ten">{{ __('terms_conditions') }}</a>
+            <a href="{{ url('/' . app()->getLocale() . '/terms') }}" class="p6-color sm:fs-ten">{{ __('terms_conditions') }}</a>
             <span class="p6-color sm:fs-ten">|</span>
-            <a href="{{ url('/privacy') }}" class="p6-color sm:fs-ten">{{ __('privacy_policy') }}</a>
+            <a href="{{ url('/' . app()->getLocale() . '/privacy') }}" class="p6-color sm:fs-ten">{{ __('privacy_policy') }}</a>
         </div>
     </div>
     <div class="container pb-4 text-center">

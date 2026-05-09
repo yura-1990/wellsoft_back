@@ -6,31 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @php
+        $currentPath = Request::path();
+        $seoData = \App\Models\Seo::where('url_path', $currentPath)->first();
+
         $siteName = 'WELLSOFT';
         $defaultTitle = 'Разработка сайтов и IT-решений любой сложности';
         $defaultDescription = 'Ищете гибкие IT-решения и первоклассные услуги? WELLSOFT — профессиональная разработка сайтов, интернет-магазинов и корпоративных порталов в Ташкенте и Узбекистане. Закажите разработку под ключ!';
         $defaultKeywords = 'гибкие IT-решения, первоклассные услуги, разработка сайтов, создание сайтов, Ташкент, Узбекистан, заказать сайт, веб-студия';
         $defaultImage = asset('images/logo.png');
 
-        $seoTitle = trim($__env->yieldContent('title', $defaultTitle));
-        $seoDescription = trim($__env->yieldContent('description', $defaultDescription));
-        $seoKeywords = trim($__env->yieldContent('keywords', $defaultKeywords));
-        $seoImage = trim($__env->yieldContent('image', $defaultImage));
-        $canonicalUrl = url()->current();
+        $seoTitle = $seoData && $seoData->title ? $seoData->title : trim($__env->yieldContent('title', $defaultTitle));
+        $seoDescription = $seoData && $seoData->description ? $seoData->description : trim($__env->yieldContent('description', $defaultDescription));
+        $seoKeywords = $seoData && $seoData->keywords ? $seoData->keywords : trim($__env->yieldContent('keywords', $defaultKeywords));
+        $seoImage = $seoData && $seoData->image ? asset('storage/' . $seoData->image) : trim($__env->yieldContent('image', $defaultImage));
+        $canonicalUrl = $seoData && $seoData->canonical_url ? $seoData->canonical_url : url()->current();
+
+        $availableLocales = config('voyager.multilingual.locales', ['ru', 'en']);
+        $currentLocale = app()->getLocale();
+        $pathWithoutLocale = preg_replace('#^/?' . $currentLocale . '(/|$)#', '', '/' . $currentPath);
+        $pathWithoutLocale = ltrim($pathWithoutLocale, '/');
     @endphp
 
-    <title>{{ $seoTitle }}</title>
+    <title>{{ $seoTitle }} | WELLSOFT</title>
     <meta name="description" content="{{ $seoDescription }}">
     <meta name="keywords" content="{{ $seoKeywords }}">
+    <meta name="author" content="WELLSOFT">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="rating" content="general">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="{{ $currentLocale === 'en' ? 'English' : 'Russian' }}">
 
     <!-- Canonical -->
     <link rel="canonical" href="{{ $canonicalUrl }}">
 
     <!-- Hreflang for multilingual SEO -->
-    <link rel="alternate" hreflang="ru" href="{{ url('/locales/ru') }}">
-    <link rel="alternate" hreflang="en" href="{{ url('/locales/en') }}">
-    <link rel="alternate" hreflang="x-default" href="{{ url('/') }}">
+    @foreach($availableLocales as $loc)
+        <link rel="alternate" hreflang="{{ $loc }}" href="{{ url("/$loc/" . $pathWithoutLocale) }}">
+        @if($loc === 'ru')
+            <link rel="alternate" hreflang="ru-UZ" href="{{ url("/$loc/" . $pathWithoutLocale) }}">
+            <link rel="alternate" hreflang="ru-RU" href="{{ url("/$loc/" . $pathWithoutLocale) }}">
+            <link rel="alternate" hreflang="ru-KZ" href="{{ url("/$loc/" . $pathWithoutLocale) }}">
+            <link rel="alternate" hreflang="ru-TJ" href="{{ url("/$loc/" . $pathWithoutLocale) }}">
+        @endif
+    @endforeach
+    <link rel="alternate" hreflang="x-default" href="{{ url("/ru/" . $pathWithoutLocale) }}">
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
@@ -38,19 +58,25 @@
 
     <!-- Open Graph -->
     <meta property="og:locale" content="{{ session('locale', 'ru') === 'en' ? 'en_US' : 'ru_RU' }}">
+    <meta property="og:locale:alternate" content="{{ session('locale', 'ru') === 'en' ? 'ru_RU' : 'en_US' }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="{{ $siteName }}">
     <meta property="og:url" content="{{ $canonicalUrl }}">
     <meta property="og:title" content="{{ $seoTitle }}">
     <meta property="og:description" content="{{ $seoDescription }}">
     <meta property="og:image" content="{{ $seoImage }}">
-    <meta property="og:image:alt" content="{{ $siteName }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ $siteName }} - {{ $seoTitle }}">
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@WellSoftUZ">
+    <meta name="twitter:creator" content="@WellSoftUZ">
     <meta name="twitter:title" content="{{ $seoTitle }}">
     <meta name="twitter:description" content="{{ $seoDescription }}">
     <meta name="twitter:image" content="{{ $seoImage }}">
+    <meta name="twitter:image:alt" content="{{ $siteName }}">
 
     <!-- Theme -->
     <meta name="theme-color" content="#ffffff">
@@ -76,6 +102,11 @@
     </script>
 
     <!-- Structured Data: Organization -->
+    @if($seoData && $seoData->json_ld)
+    <script type="application/ld+json">
+        {!! $seoData->json_ld !!}
+    </script>
+    @else
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -83,11 +114,21 @@
             "name": "WELLSOFT",
             "alternateName": "WellSoft IT Solutions",
             "url": "{{ url('/') }}",
-            "logo": "{{ asset('images/logo.png') }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ asset('images/logo.png') }}",
+                "width": 200,
+                "height": 60
+            },
             "image": "{{ $seoImage }}",
             "description": "{{ $defaultDescription }}",
             "telephone": "+998991832233",
+            "email": "info@wellsoft.uz",
             "priceRange": "$$",
+            "currenciesAccepted": "USD, UZS",
+            "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+            "foundingDate": "2020",
+            "numberOfEmployees": { "@type": "QuantitativeValue", "value": 15 },
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "10/48 UzumBog ko'chasi",
@@ -101,9 +142,20 @@
                 "latitude": "41.2995",
                 "longitude": "69.2401"
             },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                    "opens": "09:00",
+                    "closes": "18:00"
+                }
+            ],
             "areaServed": [
                 { "@type": "City", "name": "Tashkent" },
-                { "@type": "Country", "name": "Uzbekistan" }
+                { "@type": "Country", "name": "Uzbekistan" },
+                { "@type": "Country", "name": "Russia" },
+                { "@type": "Country", "name": "Kazakhstan" },
+                { "@type": "Country", "name": "Tajikistan" }
             ],
             "hasOfferCatalog": {
                 "@type": "OfferCatalog",
@@ -124,6 +176,57 @@
             ]
         }
     </script>
+    @endif
+
+    <!-- WebSite Schema with SearchAction (enables Google Sitelinks Search Box) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "WELLSOFT",
+        "url": "{{ url('/') }}",
+        "inLanguage": ["ru", "en"],
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "{{ url('/ru/blog') }}?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    @php
+        $breadcrumbs = [
+            ['name' => 'WELLSOFT', 'url' => url('/' . $currentLocale)]
+        ];
+        $segments = explode('/', $pathWithoutLocale);
+        $built = '/' . $currentLocale;
+        foreach(array_filter($segments) as $seg) {
+            $built .= '/' . $seg;
+            $breadcrumbs[] = ['name' => ucfirst(str_replace(['-', '_'], ' ', $seg)), 'url' => url($built)];
+        }
+    @endphp
+    @if(count($breadcrumbs) > 1)
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            @foreach($breadcrumbs as $i => $crumb)
+            {
+                "@type": "ListItem",
+                "position": {{ $i + 1 }},
+                "name": "{{ $crumb['name'] }}",
+                "item": "{{ $crumb['url'] }}"
+            }{{ !$loop->last ? ',' : '' }}
+            @endforeach
+        ]
+    }
+    </script>
+    @endif
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5G0KT1KDQK"></script>

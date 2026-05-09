@@ -11,7 +11,7 @@
                     >
                         <div>
                             <a
-                                href="/"
+                                href="{{ url('/' . app()->getLocale()) }}"
                                 class="navbar-brand d-none d-sm-flex align-items-center gap-2"
                                 aria-label="WELLSOFT Home"
                             >
@@ -24,7 +24,7 @@
                                 />
                             </a>
                             <a
-                                href="/"
+                                href="{{ url('/' . app()->getLocale()) }}"
                                 class="navbar-brand d-sm-none d-flex align-items-center gap-2"
                                 aria-label="WELLSOFT Home"
                             >
@@ -58,8 +58,8 @@
                                             <ul class="dropdown-menu drop_menu">
                                                 @foreach($webmenu->children as $child)
                                                     <li>
-                                                        <a class="dropdown-item fs-ten  {{ Request::is("$child->url") ? 'active' : '' }} "
-                                                           href="/{{ $child->url }}"
+                                                        <a class="dropdown-item fs-ten  {{ Request::is(app()->getLocale() . '/' . ltrim($child->url, '/')) ? 'active' : '' }} "
+                                                           href="{{ url('/' . app()->getLocale() . '/' . ltrim($child->url, '/')) }}"
                                                         >{{ $child->getTranslatedAttribute('name', session('locale')) }}</a>
                                                     </li>
                                                 @endforeach
@@ -67,8 +67,8 @@
                                         </li>
                                     @else
                                         <li class="dropdown show-dropdown ">
-                                            <a href="/{{ $webmenu->url }}"
-                                               class="fs-ten m-0 p-0 {{ Request::is("$webmenu->url") ? 'active' : '' }}">{{ $webmenu->getTranslatedAttribute('name', session('locale')) }}</a>
+                                            <a href="{{ url('/' . app()->getLocale() . '/' . ltrim($webmenu->url, '/')) }}"
+                                               class="fs-ten m-0 p-0 {{ Request::is(app()->getLocale() . '/' . ltrim($webmenu->url, '/')) ? 'active' : '' }}">{{ $webmenu->getTranslatedAttribute('name', session('locale')) }}</a>
                                         </li>
                                     @endif
 

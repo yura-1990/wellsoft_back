@@ -1,0 +1,17 @@
+# -----------------------------------------------
+# WELLSOFT - Root .htaccess for Shared Hosting
+# Place this file in your public_html/ root
+# (One level ABOVE the public/ folder)
+# -----------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Force HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redirect all traffic to the Laravel public/ folder
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ /public/$1 [L,QSA]
+</IfModule>

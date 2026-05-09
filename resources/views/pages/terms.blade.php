@@ -1,4 +1,3 @@
-
 @extends('.layouts.app')
 @section('title', __('terms_meta_title'))
 @section('description', __('terms_meta_description'))
@@ -11,25 +10,15 @@
                 <div class="container h-100">
                     <div class="row home-sizing">
                         <div class="col-lg-6 h-100">
-                            <div
-                                class="d-flex align-items-start justify-content-center h-100"
-                            >
+                            <div class="d-flex align-items-start justify-content-center h-100">
                                 @foreach($terms as $term)
                                     <div>
-                                        <h2
-                                            class="fs-one fw-bold mb-3 mb-lg-5 p3-color"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            style="margin-top: 250px"
-                                        >
+                                        <h2 class="fs-three p6-color fw-bold mb-3" data-aos="fade-up" data-aos-duration="800"
+                                            style="margin-top: calc(100vh / 2.5)">
                                             {{ $term->webMenu->getTranslatedAttribute('name', session('locale')) }}
 
                                         </h2>
-                                        <p
-                                            class="p6-color fs-ten"
-                                            data-aos="fade-down"
-                                            data-aos-duration="800"
-                                        >
+                                        <p class="p6-color fs-ten" data-aos="fade-down" data-aos-duration="800">
                                             {{ $term->getTranslatedAttribute('description', session('locale')) }}
                                         </p>
                                     </div>
@@ -43,20 +32,20 @@
     </section>
     <!-- Hero section end -->
     @foreach($terms as $term)
-    <section class="pt-120 pb-120">
-        <div class="container">
-            @foreach($term->termConditionItems as $termConditionItem)
-                <div class="mb-5">
-                    <h4 class="fs-three mb-8 mb-md-4 p4-color">
-                        {{ $termConditionItem->getTranslatedAttribute('title', session('locale')) }}
-                    </h4>
-                    <div class="term-condition-items">
-                        {!! $termConditionItem->getTranslatedAttribute('description', session('locale')) !!}
+        <section class="pt-120 pb-120">
+            <div class="container">
+                @foreach($term->termConditionItems as $termConditionItem)
+                    <div class="mb-5">
+                        <h4 class="fs-three mb-8 mb-md-4 p4-color">
+                            {{ $termConditionItem->getTranslatedAttribute('title', session('locale')) }}
+                        </h4>
+                        <div class="term-condition-items">
+                            {!! $termConditionItem->getTranslatedAttribute('description', session('locale')) !!}
+                        </div>
                     </div>
-                </div>
-            @endforeach
-        </div>
-    </section>
+                @endforeach
+            </div>
+        </section>
     @endforeach
 
 @endsection

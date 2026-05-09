@@ -17,22 +17,23 @@
                             >
                                 @foreach($aboutUs as $about)
                                     <div>
-
                                         <h1
-                                            class="fs-one fw-bold mb-3 mb-lg-5 p3-color"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            style="margin-top: 250px"
-                                        >
-                                            {{ __('about_meta_title') }}
-                                        </h1>
-                                        <p
-                                            class="p6-color fs-ten"
-                                            data-aos="fade-down"
-                                            data-aos-duration="800"
-                                        >
-                                            {{ $about->getTranslatedAttribute('description', session('locale')) }}
-                                        </p>
+                                        class="fs-three p6-color fw-bold mb-3"
+                                        data-aos="fade-up"
+                                        data-aos-duration="800"
+                                        style="margin-top: calc(100vh / 2.5)"
+                                    >
+                                     {{ __('about_meta_title') }}
+                                </h1>
+                                <p
+                                        class="p6-color home-sizing-five fs-six mb-3"
+                                        data-aos="fade-up"
+                                        data-aos-duration="800"
+                                >
+                                    {{ $about->getTranslatedAttribute('description', session('locale')) }}
+                                </p>
+
+                        
                                     </div>
                                 @endforeach
                             </div>
@@ -92,7 +93,7 @@
                             </div>
 
                             <div class="mt-5 d-flex flex-wrap gap-4 gap-lg-5 align-items-center aos-init" data-aos="fade-up" data-aos-duration="800">
-                                            <a href="/contact" class="btn p6-color w-50" aria-label="Get Quotes">
+                                            <a href="{{ url('/' . app()->getLocale() . '/contact') }}" class="btn p6-color w-50" aria-label="Get Quotes">
                                                 <span class="btn-text-0">{{ __('get_quotes') }}</span>
                                                 <span class="btn-text-1">{{ __('get_quotes') }}</span>
                                             </a>

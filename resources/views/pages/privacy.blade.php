@@ -1,4 +1,3 @@
-
 @extends('.layouts.app')
 @section('title', __('privacy_meta_title'))
 @section('description', __('privacy_meta_description'))
@@ -11,24 +10,14 @@
                 <div class="container  h-100">
                     <div class="row home-sizing">
                         <div class="col-lg-8 h-100">
-                            <div
-                                class="d-flex align-items-start justify-content-center h-100"
-                            >
+                            <div class="d-flex align-items-start justify-content-center h-100">
                                 @foreach($privacies as $privacy)
                                     <div>
-                                        <h2
-                                            class="fs-two fw-medium mb-3 mb-lg-5 p3-color"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
-                                            style="margin-top: 250px"
-                                        >
+                                        <h2 class="fs-three p6-color fw-bold mb-3" data-aos="fade-up" data-aos-duration="800"
+                                            style="margin-top: calc(100vh / 2.5)">
                                             {{ $privacy->webMenu->getTranslatedAttribute('name', session('locale')) }}
                                         </h2>
-                                        <p
-                                            class="p6-color fs-ten"
-                                            data-aos="fade-down"
-                                            data-aos-duration="800"
-                                        >
+                                        <p class="p6-color fs-ten" data-aos="fade-down" data-aos-duration="800">
                                             {{ $privacy->getTranslatedAttribute('description', session('locale')) }}
                                         </p>
                                     </div>

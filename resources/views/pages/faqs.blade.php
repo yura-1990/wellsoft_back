@@ -18,19 +18,19 @@
                                 <div>
 
                                     <h1
-                                        class="fs-one fw-bold mb-3 mb-lg-5 p3-color"
+                                        class="fs-three p6-color fw-bold mb-3"
                                         data-aos="fade-up"
                                         data-aos-duration="800"
-                                        style="margin-top: 150px"
+                                        style="margin-top: calc(100vh / 2.5)"
                                     >
                                         {{ __('faqs_meta_title') }}
                                     </h1>
                                     <p
-                                        class="p6-color fs-ten"
-                                        data-aos="fade-down"
+                                        class="p6-color home-sizing-five fs-six mb-3"
+                                        data-aos="fade-up"
                                         data-aos-duration="800"
                                     >
-                                        Build responsive, mobile-first projects on the web with the world's most popular front-end component library.
+                                        Нашли ответы на самые частые вопросы о разработке сайтов, ценах и сроках выполнения.
                                     </p>
                                 </div>
                             </div>
@@ -45,13 +45,12 @@
     <section class="pt-120 pb-120">
         <div class="container">
             <div class="process_heading w-100 text-center aos-init aos-animate" data-aos="fade-down">
-                <span class="fs-ten fw-semibold p2-color mb-2 text-center">FAQ's</span>
+                <span class="fs-ten fw-semibold p2-color mb-2 text-center">FAQ</span>
                 <h2 class="fs-two fw-semibold p8-color mb-3 mb-lg-6">
-                    Frequently Asked Questions
+                    Часто задаваемые вопросы
                 </h2>
                 <p class="fs-ten p4-color">
-                    Build responsive, mobile-first projects on the web with the world's
-                    most popular front-end component library.
+                    Всё, что вы хотели знать о сотрудничестве с WELLSOFT.
                 </p>
             </div>
             <div class="row g-2 g-md-6 mt-5 mt-md-10">
@@ -292,4 +291,78 @@
             </div>
         </div>
     </section>
+
+    <!-- FAQPage Schema for Google Rich Results -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Can you provide all IT Management services?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! WELLSOFT provides a full range of IT services including website development, mobile apps, CRM systems, e-commerce platforms, SEO optimization, and ongoing technical support."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I change plans later on?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. You can upgrade or adjust your project scope at any time. We work with flexible contracts designed to adapt to your growing business needs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I try before I buy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! We offer a free initial consultation and project scoping session. You can see our previous work in our portfolio before making any decision."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will I receive future updates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. All projects include a warranty period with free bug fixes. We also offer long-term maintenance plans to keep your site updated and secure."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this service work in my country?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "WELLSOFT serves clients worldwide, with a focus on Uzbekistan, Russia, Kazakhstan, Tajikistan and Kyrgyzstan. We work fully remotely and can support any timezone."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much will I pay?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The cost depends on the complexity and scope of your project. A simple landing page starts from $300, while a full e-commerce or corporate platform can range from $1,000 to $10,000+. Contact us for a free quote."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I sign the contract?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We can sign contracts electronically or in person at our office in Tashkent. Simply reach out via our contact page and we will guide you through the process."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you handle ongoing maintenance?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! We offer monthly maintenance packages that include security updates, performance monitoring, content updates and technical support."
+                }
+            }
+        ]
+    }
+    </script>
 @endsection

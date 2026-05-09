@@ -1,4 +1,3 @@
-
 @extends('.layouts.app')
 @section('title', __('testimonials_meta_title'))
 @section('description', __('testimonials_meta_description'))
@@ -10,27 +9,19 @@
         <div>
             <div class="particles_hero">
                 <div class="container h-100">
-                    <div class="row home-sizing" >
+                    <div class="row home-sizing">
                         <div class="col-lg-8 h-100">
-                            <div
-                                class="d-flex align-items-start justify-content-center h-100"
-                            >
+                            <div class="d-flex align-items-start justify-content-center h-100">
                                 <div>
 
-                                    <h1
-                                        class="fs-one fw-bold mb-3 mb-lg-5 p3-color"
-                                        data-aos="fade-up"
-                                        data-aos-duration="800"
-                                        style="margin-top: 250px"
-                                    >
+                                    <h1 class="fs-three p6-color fw-bold mb-3" data-aos="fade-up" data-aos-duration="800"
+                                        style="margin-top: calc(100vh / 2.5)">
                                         {{ __('testimonials_meta_title') }}
                                     </h1>
-                                    <p
-                                        class="p6-color fs-ten"
-                                        data-aos="fade-down"
-                                        data-aos-duration="800"
-                                    >
-                                        Build responsive, mobile-first projects on the web with the world's most popular front-end component library.
+                                    <p class="p6-color home-sizing-five fs-six mb-3" data-aos="fade-up"
+                                        data-aos-duration="800">
+                                        Более 150 клиентов по всему СНГ доверяют WELLSOFT создание и развитие своих цифровых
+                                        продуктов.
                                     </p>
                                 </div>
                             </div>
@@ -51,12 +42,14 @@
         </div>
         <div class="mt-8 mt-lg-15 container">
             <div class="swiper testimonial_slider swiper-initialized swiper-horizontal swiper-backface-hidden">
-                <div class="swiper-wrapper" id="swiper-wrapper-26a8be5e6ad0cf73" aria-live="off" style="transition-duration: 2500ms; transform: translate3d(-438px, 0px, 0px);">
+                <div class="swiper-wrapper" id="swiper-wrapper-26a8be5e6ad0cf73" aria-live="off"
+                    style="transition-duration: 2500ms; transform: translate3d(-438px, 0px, 0px);">
 
 
 
 
-                    <div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 4" data-swiper-slide-index="1" style="width: 408px; margin-right: 30px;">
+                    <div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 4" data-swiper-slide-index="1"
+                        style="width: 408px; margin-right: 30px;">
                         <div class="px-4 px-sm-8 py-5 py-sm-10 border cus-border second bg10-color rounded-4">
                             <div class="d-flex gap-4 gap-lg-8">
                                 <div class="">
@@ -75,10 +68,14 @@
                                 </div>
                             </div>
                             <p class="p6-color mt-4 mt-lg-8">
-                                "Команда WELLSOFT разработала для нас современный интернет-магазин, который не только круто выглядит, но и приносит реальные продажи. Огромное спасибо за профессиональный подход и SEO-оптимизацию!"
+                                "Команда WELLSOFT разработала для нас современный интернет-магазин, который не только круто
+                                выглядит, но и приносит реальные продажи. Огромное спасибо за профессиональный подход и
+                                SEO-оптимизацию!"
                             </p>
                         </div>
-                    </div><div class="swiper-slide swiper-slide-active" role="group" aria-label="3 / 4" data-swiper-slide-index="2" style="width: 408px; margin-right: 30px;">
+                    </div>
+                    <div class="swiper-slide swiper-slide-active" role="group" aria-label="3 / 4"
+                        data-swiper-slide-index="2" style="width: 408px; margin-right: 30px;">
                         <div class="px-4 px-sm-8 py-5 py-sm-10 border cus-border second bg10-color rounded-4">
                             <div class="d-flex gap-4 gap-lg-8">
                                 <div class="">
@@ -97,10 +94,14 @@
                                 </div>
                             </div>
                             <p class="p6-color mt-4 mt-lg-8">
-                                "Как дизайнер, я очень требователен к деталям. Специалисты WELLSOFT превзошли мои ожидания: код чистый, верстка пиксель-в-пиксель, а скорость загрузки сайта просто потрясающая. Рекомендую!"
+                                "Как дизайнер, я очень требователен к деталям. Специалисты WELLSOFT превзошли мои ожидания:
+                                код чистый, верстка пиксель-в-пиксель, а скорость загрузки сайта просто потрясающая.
+                                Рекомендую!"
                             </p>
                         </div>
-                    </div><div class="swiper-slide swiper-slide-next" role="group" aria-label="4 / 4" data-swiper-slide-index="3" style="width: 408px; margin-right: 30px;">
+                    </div>
+                    <div class="swiper-slide swiper-slide-next" role="group" aria-label="4 / 4" data-swiper-slide-index="3"
+                        style="width: 408px; margin-right: 30px;">
                         <div class="px-4 px-sm-8 py-5 py-sm-10 border cus-border second bg10-color rounded-4">
                             <div class="d-flex gap-4 gap-lg-8">
                                 <div class="">
@@ -119,10 +120,14 @@
                                 </div>
                             </div>
                             <p class="p6-color mt-4 mt-lg-8">
-                                "Благодаря WELLSOFT наш бизнес вышел на новый уровень. Они разработали для нас удобный корпоративный портал и настроили рекламные кампании, которые увеличили поток клиентов в 3 раза."
+                                "Благодаря WELLSOFT наш бизнес вышел на новый уровень. Они разработали для нас удобный
+                                корпоративный портал и настроили рекламные кампании, которые увеличили поток клиентов в 3
+                                раза."
                             </p>
                         </div>
-                    </div><div class="swiper-slide" role="group" aria-label="1 / 4" data-swiper-slide-index="0" style="width: 408px; margin-right: 30px;">
+                    </div>
+                    <div class="swiper-slide" role="group" aria-label="1 / 4" data-swiper-slide-index="0"
+                        style="width: 408px; margin-right: 30px;">
                         <div class="px-4 px-sm-8 py-5 py-sm-10 border cus-border second bg10-color rounded-4">
                             <div class="d-flex gap-4 gap-lg-8">
                                 <div class="">
@@ -141,11 +146,15 @@
                                 </div>
                             </div>
                             <p class="p6-color mt-4 mt-lg-8">
-                                "Отличная веб-студия в Ташкенте! Заказывали лендинг под ключ — всё сделали в срок, предложили классные креативные идеи и обеспечили полную техническую поддержку после запуска."
+                                "Отличная веб-студия в Ташкенте! Заказывали лендинг под ключ — всё сделали в срок,
+                                предложили классные креативные идеи и обеспечили полную техническую поддержку после
+                                запуска."
                             </p>
                         </div>
-                    </div></div>
-                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                    </div>
+                </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
         </div>
     </section>
 

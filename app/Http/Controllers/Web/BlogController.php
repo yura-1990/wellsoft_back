@@ -19,9 +19,10 @@ class BlogController extends Controller
         return view('pages.blog', compact('blogs'));
     }
 
-    public function blogItem(Request $request, BlogItem $blogItem): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
+    public function blogItem($locale, $blogItemId): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
     {
-        $blogItem = $blogItem->load(['services', 'blog.webMenu']);
+        $blogItem = BlogItem::findOrFail($blogItemId);
+        $blogItem->load(['services', 'blog.webMenu']);
 
         return view('pages.blogdetails', compact('blogItem'));
     }

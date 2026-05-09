@@ -1,8 +1,8 @@
 
 @extends('layouts.app')
-@section('title', __('meta_title'))
-@section('description', __('meta_description'))
-@section('keywords', __('meta_keywords'))
+@section('title', isset($geoSeo) ? $geoSeo->title : __('meta_title'))
+@section('description', isset($geoSeo) ? $geoSeo->description : __('meta_description'))
+@section('keywords', isset($geoSeo) ? $geoSeo->keywords : __('meta_keywords'))
 @section('main')
 <!-- Hero section start -->
 <section class="particial-bg">
@@ -21,14 +21,14 @@
                                     data-aos-duration="800"
                                     style="margin-top: 0px"
                                 >
-                                    {{ __('meta_title') }}
+                                    {{ isset($geoSeo) ? $geoSeo->h1 : __('meta_title') }}
                                 </h1>
                                 <p
                                         class="p6-color home-sizing-five fs-six mb-3"
                                         data-aos="fade-up"
                                         data-aos-duration="800"
                                 >
-                                    {{ __('meta_description') }}
+                                    {{ isset($geoSeo) ? $geoSeo->description : __('meta_description') }}
                                 </p>
                                 <p
                                     class="p6-color fs-ten"
@@ -43,7 +43,7 @@
                                         data-aos="fade-down"
                                     >
                                         <div class="d-flex flex-wrap gap-4 gap-lg-5 align-items-center aos-init" data-aos="fade-up" data-aos-duration="800">
-                                            <a href="/contact" class="btn p6-color" style="display:flex; width: 295px; ">
+                                            <a href="{{ url('/' . app()->getLocale() . '/contact') }}" class="btn p6-color" style="display:flex; width: 295px; ">
                                                 <span class="btn-text-0 d-block">{{ __('get_quotes') }}</span>
                                                 <span class="btn-text-1 d-block">{{ __('get_quotes') }}</span>
                                             </a>
@@ -111,7 +111,7 @@
                 <p class="fs-ten p4-color">{{ $service->getTranslatedAttribute('description', session('locale')) }}</p>
             </div>
             <div>
-                <!--<a href="{{ url('/services') }}" class="btn p6-color">-->
+                <!--<a href="{{ url('/' . app()->getLocale() . '/services') }}" class="btn p6-color">-->
                 <!--    <span class="btn-text-0">{{ __('see_services') }}</span>-->
                 <!--    <span class="btn-text-1">{{ __('see_services') }}</span>-->
                 <!--</a>-->
@@ -337,7 +337,7 @@
                                 </div>
 
                                 <div class="d-flex flex-wrap gap-4 gap-lg-5 mt-5 align-items-center aos-init" data-aos="fade-up" data-aos-duration="800">
-                                    <a href="/contact" class="btn p6-color" style="display:flex; width: 295px; ">
+                                    <a href="{{ url('/' . app()->getLocale() . '/contact') }}" class="btn p6-color" style="display:flex; width: 295px; ">
                                         <span class="btn-text-0">{{ __('get_quotes') }}</span>
                                         <span class="btn-text-1">{{ __('get_quotes') }}</span>
                                     </a>
@@ -1630,7 +1630,7 @@
                         <div
                             class="mt-5 mt-lg-10 d-flex flex-wrap gap-4 gap-lg-5 d-flex align-items-center"
                         >
-                            <a href="{{ url('/contact') }}" class="btn p6-color" style="display:flex; width: 295px; ">
+                            <a href="{{ url('/' . app()->getLocale() . '/contact') }}" class="btn p6-color" style="display:flex; width: 295px; ">
                                 <span class="btn-text-0">{{ __('get_quotes') }}</span>
                                 <span class="btn-text-1">{{ __('get_quotes') }}</span>
                             </a>
@@ -1702,7 +1702,7 @@
                                             <span class="fs-ten p4-color">{{ __('10_min_read') }}</span>
                                         </div>
                                     </div>
-                                    <a href="{{ url("blog-items/$blogItem->id") }}" class="fs-five fw-semibold p8-color mb-2 mb-md-4 d-block line-text">
+                                    <a href="{{ url('/' . app()->getLocale() . '/blog-items/' . $blogItem->id) }}" class="fs-five fw-semibold p8-color mb-2 mb-md-4 d-block line-text">
                                         {{ $blogItem->getTranslatedAttribute('title', session('locale')) }}
                                     </a>
                                     <p class="fs-ten p4-color line-text">
@@ -1721,7 +1721,7 @@
                                             {{--                                                </button>--}}
                                         </div>
 
-                                        <a href="{{ url("blog-items/$blogItem->id") }}" class="underline-hover-effect d-flex align-items-center gap-1"><span class="fs-ten p4-color">{{ __('read_more') }}</span>
+                                        <a href="{{ url('/' . app()->getLocale() . '/blog-items/' . $blogItem->id) }}" class="underline-hover-effect d-flex align-items-center gap-1"><span class="fs-ten p4-color">{{ __('read_more') }}</span>
                                             <i class="ph ph-caret-right p4-color"></i></a>
                                     </div>
                                 </div>
@@ -1750,7 +1750,7 @@
         @endforeach
         <div class="row g-3 g-md-6 mt-5 mt-md-10">
             <div class="col-lg-8">
-                <form action="{{ url('/contact') }}" id="contact-form" class="bg14-color py-5 py-md-10 px-4 px-md-8 border cus-border border-six rounded-4" method="post">
+                <form action="{{ url('/' . app()->getLocale() . '/contact') }}" id="contact-form" class="bg14-color py-5 py-md-10 px-4 px-md-8 border cus-border border-six rounded-4" method="post">
                     @csrf
                     <div class="d-sm-flex gap-3 gap-lg-6 mb-4 mb-md-8">
                         <div class="w-100">

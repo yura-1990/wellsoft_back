@@ -17,10 +17,10 @@
                                 @foreach($teams as $team)
                                     <div>
                                         <h1
-                                            class="fs-one fw-bold mb-3 mb-lg-5 p3-color"
+                                            class="fs-three p6-color fw-bold mb-3"
                                             data-aos="fade-up"
                                             data-aos-duration="800"
-                                            style="margin-top: 250px"
+                                            style="margin-top: calc(100vh / 2.5)"
                                         >
                                             {{ __('team_meta_title') }}
                                         </h1>
